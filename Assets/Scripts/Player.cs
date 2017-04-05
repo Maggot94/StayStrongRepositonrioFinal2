@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class Player : MonoBehaviour {
@@ -152,8 +153,17 @@ public class Player : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
+	void OnTriggerEnter2D(Collider2D other)
+    {
+		life = life - 10; 
+		Debug.Log (life);
+        if(life == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
 		
+<<<<<<< HEAD
+=======
 	       
 		    //Dodge.SetInteger ("Dodge",3);
 		    //isDamage = true;
@@ -162,6 +172,7 @@ public class Player : MonoBehaviour {
 		    vida.fillAmount -= 0.1f; 
 			Debug.Log (life);
 		//}
+>>>>>>> 655fa0232fdb746f5f0b9992ecab3a52701cf636
 	}
 
 }
